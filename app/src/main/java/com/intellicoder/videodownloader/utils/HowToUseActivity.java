@@ -22,25 +22,21 @@ public class HowToUseActivity extends AppCompatActivity {
     private Button useLetsGoButton;
     private SliderView sliderView;
     private SliderAdapter adapter;
-    private int images[] = {R.drawable.bwa,
+    private final int[] images = {R.drawable.bwa,
             R.drawable.downloaderdrawer,
             R.drawable.dailymotion,
             R.drawable.facebook,
             R.drawable.gallerydrawer};
-    private String imageDescription[] = {"Image 1","Image 2","Image 3","Image 4","Image 5"};
+    private final String[] imageDescription = {"Image 1","Image 2","Image 3","Image 4","Image 5"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_vpnactivity);
+        Log.d("f","f");
 
         useLetsGoButton = findViewById(R.id.how_to_use_back_button);
-        useLetsGoButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(HowToUseActivity.this, MainActivity.class));
-            }
-        });
+        useLetsGoButton.setOnClickListener(view -> startActivity(new Intent(HowToUseActivity.this, MainActivity.class)));
 
         sliderView = findViewById(R.id.imageSlider);
 
@@ -57,11 +53,6 @@ public class HowToUseActivity extends AppCompatActivity {
         sliderView.startAutoCycle();
 
 
-        sliderView.setOnIndicatorClickListener(new DrawController.ClickListener() {
-            @Override
-            public void onIndicatorClicked(int position) {
-                Log.i("GGG", "onIndicatorClicked: " + sliderView.getCurrentPagePosition());
-            }
-        });
+        sliderView.setOnIndicatorClickListener(position -> Log.i("GGG", "onIndicatorClicked: " + sliderView.getCurrentPagePosition()));
     }
 }
