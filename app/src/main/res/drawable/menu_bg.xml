@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <!--  android:drawable="@android:drawable/dialog_holo_light_frame"-->
+        <shape>
+            <solid android:color="@color/white" />
+            <corners android:radius="23dp" />
+            <stroke android:color="#F0F0F0" android:dashGap="@dimen/material_emphasis_medium" android:width="1dp"/>
+
+        </shape>
+
+
+    </item>
+</selector>
